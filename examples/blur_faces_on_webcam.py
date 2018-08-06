@@ -21,7 +21,8 @@ while True:
     small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 
     # Find all the faces and face encodings in the current frame of video
-    face_locations = face_recognition.face_locations(small_frame, model="cnn")
+    #face_locations = face_recognition.face_locations(small_frame, model="cnn")         # cnn的速度慢些
+    face_locations = face_recognition.face_locations(small_frame)
 
     # Display the results
     for top, right, bottom, left in face_locations:
